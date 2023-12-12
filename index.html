@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Pamaskomu</h1>
+   <p>Kasirink kaska</p>
+   <button onclick="playGame();">Zaidimas</button>
+   
+   <script>
+    function playGame(){
+const userChoice = zaidejoPasirinkimas(prompt('Pasirink akmuo, popierius arba žirklės')); 
+const computerChoice = kompiuterioPasirinkimas();
+alert('Tavo metimas: ' + userChoice);
+alert('Kompiuterio metimas: ' + computerChoice);
+alert(nustatytiLaimetoja(userChoice, computerChoice));
+    
+document.write('Tavo metimas: ' + userChoice + '<br>');
+document.write('Kompiuterio metimas: ' + computerChoice + '<br>');
+document.write(nustatytiLaimetoja(userChoice, computerChoice));
+       
+    };
+        
+       function zaidejoPasirinkimas(userInput){
+           userInput = userInput.toLowerCase();
+           
+           if(userInput==='akmuo' || userInput==='poperius' || userInput==="zirkles"){
+              return userInput;
+              }else{
+                console.log('error');
+              };
+           };
+       
+       function kompiuterioPasirinkimas(){
+           const randomNumber = Math.floor(Math.random()*3);
+           
+           switch(randomNumber){
+            case 0:
+                  return "akmuo";
+                  break;
+            case 1:
+                  return "poperius";
+                  break;
+            case 2:
+                  return "zirkles";
+                  break;
+            default:
+                  return "error";
+                  break;     
+           };
+                  
+              
+       };
+       
+       function nustatytiLaimetoja(userChoice, computerChoice){
+            if (userChoice === computerChoice) {
+                return "Lygiosios";
+            }
+            if (userChoice === "akmuo") {
+                if (computerChoice === "popierius") {
+                    return "Komputeris laimėjo!";
+                } else {
+                    return "Jūs laimėjote!";
+                }
+            }
+
+            if (userChoice === "popierius") {
+                if (computerChoice === "žirklės") {
+                    return "Komputeris laimėjo!";
+                } else {
+                    return "Jūs laimėjote!";
+                }
+            }
+
+            if (userChoice === "žirklės") {
+                if (computerChoice === "akmuo") {
+                    return "Komputeris laimėjo!";
+                } else {
+                    return "Jūs laimėjote!";
+                }
+            };
+               
+       };
+           
+           
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+</body>
+</html>
